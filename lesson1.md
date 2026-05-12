@@ -1,5 +1,7 @@
 # Lesson 1
 
+## Today
+
 - Tooling setup: uv and IPython
 - Interactive mode
 - Variables and naming conventions
