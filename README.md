@@ -4,9 +4,9 @@ A course in Python programming. New lessons added as the course progresses.
 
 ## Contents
 
-| Lesson | Slides | Notebook |
-|--------|--------|----------|
-| 1 | [lesson1.pdf](https://unixfile.github.io/learning-python-2026/lesson1.pdf) | [lesson1.ipynb](https://unixfile.github.io/learning-python-2026/lesson1.ipynb) |
+| Lesson | Date | Slides | Notebook |
+|--------|------|--------|----------|
+| 1 | 2026-05-12 | [lesson1.pdf](https://unixfile.github.io/learning-python-2026/lesson1.pdf) | [lesson1.ipynb](https://unixfile.github.io/learning-python-2026/lesson1.ipynb) |
 
 ## Get the material
 

@@ -68,7 +68,7 @@ https://pypi.org
 ## Not covered
 
 - Legacy tooling, now part of uv: pip/pipx, venv
-- Editor/IDE: Find one you like. Many use VS Code/Codeium
+- Editor/IDE: Find one you like. Many use VS Code/Codium
 
 # Interactive mode
 
