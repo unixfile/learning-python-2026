@@ -13,11 +13,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
       - name: Install pandoc
         run: sudo apt-get install -y pandoc
 
-      - name: Build PDF
-        run: make pdf
+      - name: Build
+        run: make
 
       - name: Publish to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

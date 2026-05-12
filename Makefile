@@ -1,7 +1,7 @@
 LESSONS   = lesson1
 BUILD     = build
 PDFS      = $(addprefix $(BUILD)/,$(addsuffix .pdf,$(LESSONS)))
-NOTEBOOKS = $(LESSONS:%=%.ipynb)
+NOTEBOOKS = $(addprefix $(BUILD)/,$(addsuffix .ipynb,$(LESSONS)))
 
 .PHONY: all pdf notebooks clean
 
@@ -17,9 +17,8 @@ $(BUILD):
 $(BUILD)/%.pdf: %.md | $(BUILD)
 	pandoc -t beamer -o $@ $<
 
-%.ipynb: %-notebook.md
+$(BUILD)/%.ipynb: %-notebook.md | $(BUILD)
 	uvx jupytext --to notebook --output $@ $<
 
 clean:
 	rm -rf $(BUILD)
-	rm -f $(NOTEBOOKS)
