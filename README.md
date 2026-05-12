@@ -1,4 +1,4 @@
-# Learning Python — Lesson 1
+# Learning Python: Lesson 1
 
 Slides and interactive notebook for Lesson 1.
 
@@ -23,7 +23,7 @@ Or download a ZIP from the GitHub page.
 
 ## Run the notebook
 
-No installation needed — run with [uv](https://docs.astral.sh/uv/):
+No installation needed. Run with [uv](https://docs.astral.sh/uv/):
 
 ```
 uvx jupyter notebook lesson1.ipynb
