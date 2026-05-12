@@ -1,14 +1,14 @@
-# Learning Python: Lesson 1
+# Learning Python
 
-Slides and interactive notebook for Lesson 1.
+A course in Python programming. New lessons added as the course progresses.
 
 ## Contents
 
 | File | Description |
 |------|-------------|
-| `build/lesson1.pdf` | Slides (PDF) |
-| `lesson1.md` | Slide source (Markdown) |
-| `lesson1.ipynb` | Interactive notebook |
+| `lessonN.md` | Slide source for lesson N |
+| `lessonN.ipynb` | Interactive notebook for lesson N |
+| `build/lessonN.pdf` | Slides (PDF) |
 
 ## Get the material
 
@@ -21,7 +21,7 @@ cd learning-python-2026
 
 Or download a ZIP from the GitHub page.
 
-## Run the notebook
+## Run a notebook
 
 No installation needed. Run with [uv](https://docs.astral.sh/uv/):
 
