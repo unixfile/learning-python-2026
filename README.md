@@ -21,10 +21,10 @@ Or download a ZIP from the GitHub page.
 
 ## Run a notebook
 
-No installation needed. Run with [uv](https://docs.astral.sh/uv/):
+Download the notebook from the links above. Then run with [uv](https://docs.astral.sh/uv/):
 
 ```
-uvx jupyter notebook build/lesson1.ipynb
+uvx jupyter notebook lesson1.ipynb
 ```
 
 This opens the notebook in your browser. Run cells with Shift+Enter.
