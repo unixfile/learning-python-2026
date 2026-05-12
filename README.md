@@ -4,11 +4,9 @@ A course in Python programming. New lessons added as the course progresses.
 
 ## Contents
 
-| File | Description |
-|------|-------------|
-| `lessonN.md` | Slide source for lesson N |
-| `lessonN.ipynb` | Interactive notebook for lesson N |
-| `build/lessonN.pdf` | Slides (PDF) |
+| Lesson | Slides | Notebook |
+|--------|--------|----------|
+| 1 | [PDF](build/lesson1.pdf) | [lesson1.ipynb](lesson1.ipynb) |
 
 ## Get the material
 
