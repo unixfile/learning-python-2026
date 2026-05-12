@@ -1,5 +1,9 @@
 # Lesson 1
 
+## Material
+
+https://github.com/unixfile/learning-python-2026
+
 ## Today
 
 - Tooling setup: uv and IPython
