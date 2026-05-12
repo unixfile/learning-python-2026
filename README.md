@@ -38,3 +38,7 @@ make
 ```
 
 Requires [uv](https://docs.astral.sh/uv/) and [pandoc](https://pandoc.org).
+
+---
+
+Held by Frans for [Stockholms IT-förening](https://stockholmsitforening.se/).
