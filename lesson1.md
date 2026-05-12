@@ -1,9 +1,11 @@
 # Lesson 1
 
-- yada
-- yada
-- yada
-- yada
+- Tooling setup: uv and IPython
+- Interactive mode
+- Variables and naming conventions
+- Scripts and execution
+- Comments and object inspection
+- Strings and f-strings
 
 # Tooling setup
 
