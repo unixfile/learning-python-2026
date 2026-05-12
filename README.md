@@ -6,7 +6,7 @@ A course in Python programming. New lessons added as the course progresses.
 
 | Lesson | Slides | Notebook |
 |--------|--------|----------|
-| 1 | [lesson1.pdf](build/lesson1.pdf) | [lesson1.ipynb](lesson1.ipynb) |
+| 1 | [lesson1.pdf](https://unixfile.github.io/learning-python-2026/lesson1.pdf) | [lesson1.ipynb](lesson1.ipynb) |
 
 ## Get the material
 

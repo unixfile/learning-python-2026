@@ -1,12 +1,15 @@
-LESSONS = lesson1
-BUILD   = build
-PDFS    = $(addprefix $(BUILD)/,$(addsuffix .pdf,$(LESSONS)))
+LESSONS   = lesson1
+BUILD     = build
+PDFS      = $(addprefix $(BUILD)/,$(addsuffix .pdf,$(LESSONS)))
+NOTEBOOKS = $(LESSONS:%=%.ipynb)
 
-.PHONY: all pdf release clean
+.PHONY: all pdf notebooks clean
 
-all: pdf
+all: pdf notebooks
 
 pdf: $(PDFS)
+
+notebooks: $(NOTEBOOKS)
 
 $(BUILD):
 	mkdir -p $(BUILD)
@@ -14,10 +17,9 @@ $(BUILD):
 $(BUILD)/%.pdf: %.md | $(BUILD)
 	pandoc -t beamer -o $@ $<
 
-release: all
-	git add $(PDFS) $(LESSONS:%=%.md) $(LESSONS:%=%.ipynb) README.md Makefile
-	git diff --cached --quiet || git commit -m "Update lesson materials"
-	. ~/creds/tokens && git push
+%.ipynb: %-notebook.md
+	uvx jupytext --to notebook --output $@ $<
 
 clean:
 	rm -rf $(BUILD)
+	rm -f $(NOTEBOOKS)
