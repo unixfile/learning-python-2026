@@ -10,7 +10,7 @@ kernelspec:
   name: python3
 ---
 
-# Lesson 1 — Python Smorgasbord
+# Lesson 1
 
 Run cells with Shift+Enter.
 
