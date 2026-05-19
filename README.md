@@ -44,10 +44,11 @@ Held by Frans for [Stockholms IT-förening](https://stockholmsitforening.se/).
 
 ## Links
 
-- [uv installation](https://docs.astral.sh/uv/getting-started/installation/)
-- [uv shell autocompletion](https://docs.astral.sh/uv/getting-started/installation/#shell-autocompletion)
-- [PyPI, Python Package Index](https://pypi.org)
-- [Python documentation](https://docs.python.org/3/)
-- [Python built-in functions](https://docs.python.org/3/library/functions.html)
-- [Python keywords](https://docs.python.org/3/reference/lexical_analysis.html#keywords)
-- [Python operator precedence](https://docs.python.org/3/reference/expressions.html#operator-precedence)
+[uv installation](https://docs.astral.sh/uv/getting-started/installation/)  
+[uv shell autocompletion](https://docs.astral.sh/uv/getting-started/installation/#shell-autocompletion)  
+[PyPI, Python Package Index](https://pypi.org)
+
+[Python documentation](https://docs.python.org/3/)  
+[Python built-in functions](https://docs.python.org/3/library/functions.html)  
+[Python keywords](https://docs.python.org/3/reference/lexical_analysis.html#keywords)  
+[Python operator precedence](https://docs.python.org/3/reference/expressions.html#operator-precedence)
