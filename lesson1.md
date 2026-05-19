@@ -58,7 +58,7 @@ $ python3
 ## Optionally install other tools
 
 ```
-$ uv tool install _package_
+$ uv tool install <package>
 ```
 
 ## The Python Package Index
@@ -105,7 +105,7 @@ Out: 'Hello world!'
 ```
 In : some_number = 42
 In : some_number
-Out: 42, but only in IPython
+Out: 42  # auto-print, IPython only
 In : type(some_number)
 Out: int
 ```
@@ -125,7 +125,7 @@ MAX_SIZE         constants
 ```
 _ = "throw-away variable, by convention"
 _my_var = "this is a private variable"
-__main__  # Special built-in "dunder" methods
+__dunder__  # Special built-in names, eg __main__, __name__
 ```
 
 # Non-interactive (real) programming
@@ -171,7 +171,7 @@ $ ./script.py
 ```python
 # This is a comment
 ip_addr = input("Enter an IP address: ")
-print("ip_addr")
+print(ip_addr)
 
 """
 This is a multiline comment.
@@ -183,7 +183,7 @@ Write your essay here.
 # Object inspection
 
 ```python
-help(my_var)  # Provides documentation object
+help(my_var)  # Provides object documentation
 
 dir(my_var)   # List object members
 ```

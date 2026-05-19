@@ -6,7 +6,7 @@ A course in Python programming. New lessons added as the course progresses.
 
 | Lesson | Date | Slides | Notebook |
 |--------|------|--------|----------|
-| 1 | 2026-05-12 | [lesson1.pdf](https://unixfile.github.io/learning-python-2026/lesson1.pdf) | [lesson1.ipynb](https://unixfile.github.io/learning-python-2026/lesson1.ipynb) |
+| 1 | 2026-05-12 18:30 | [lesson1.pdf](https://unixfile.github.io/learning-python-2026/lesson1.pdf) | [lesson1.ipynb](https://unixfile.github.io/learning-python-2026/lesson1.ipynb) |
 
 ## Get the material
 
@@ -40,3 +40,9 @@ Requires [uv](https://docs.astral.sh/uv/) and [pandoc](https://pandoc.org).
 ---
 
 Held by Frans for [Stockholms IT-förening](https://stockholmsitforening.se/).
+
+## Links
+
+- [uv installation](https://docs.astral.sh/uv/getting-started/installation/)
+- [uv shell autocompletion](https://docs.astral.sh/uv/getting-started/installation/#shell-autocompletion)
+- [PyPI, Python Package Index](https://pypi.org)
