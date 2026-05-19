@@ -51,4 +51,4 @@ Held by Frans for [Stockholms IT-förening](https://stockholmsitforening.se/).
 [Python documentation](https://docs.python.org/3/)  
 [Python built-in functions](https://docs.python.org/3/library/functions.html)  
 [Python keywords](https://docs.python.org/3/reference/lexical_analysis.html#keywords)  
-[Python operator precedence](https://docs.python.org/3/reference/expressions.html#operator-precedence)
+[Python operators](https://docs.python.org/3/reference/expressions.html)
