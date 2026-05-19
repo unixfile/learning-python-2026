@@ -20,23 +20,21 @@ cd learning-python-2026
 
 Or download a ZIP from the GitHub page.
 
-## Run a notebook
+## Build
 
-Download the notebook from the links above. Then run with [uv](https://docs.astral.sh/uv/):
-
-```
-uvx jupyter notebook <notebook>  # eg lesson1.ipynb
-```
-
-This opens the notebook in your browser. Run cells with Shift+Enter.
-
-## Build the slides from source
+Requires [uv](https://docs.astral.sh/uv/) and [pandoc](https://pandoc.org).
 
 ```
 make
 ```
 
-Requires [uv](https://docs.astral.sh/uv/) and [pandoc](https://pandoc.org).
+## Run a notebook
+
+```
+uvx jupyter notebook <notebook>  # eg build/lesson1.ipynb
+```
+
+This opens the notebook in your browser. Run cells with Shift+Enter.
 
 ---
 
