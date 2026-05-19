@@ -25,7 +25,7 @@ Or download a ZIP from the GitHub page.
 Download the notebook from the links above. Then run with [uv](https://docs.astral.sh/uv/):
 
 ```
-uvx jupyter notebook lesson1.ipynb
+uvx jupyter notebook <notebook>  # eg lesson1.ipynb
 ```
 
 This opens the notebook in your browser. Run cells with Shift+Enter.
