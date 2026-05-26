@@ -11,7 +11,7 @@ https://github.com/unixfile/learning-python-2026
 - Reading and writing files
 - Code blocks and indentation
 
-# Integers and floats
+# 1. Integers and floats
 
 ```
 In : foo = 42
@@ -23,7 +23,7 @@ In : type(bar)
 Out: float
 ```
 
-# Basic arithmetic
+# 2. Basic arithmetic
 
 ```
 In : result = 1 + 2 - 3 * 4
@@ -35,7 +35,7 @@ In : quotient, type(quotient)
 Out: (0.4285714285714285, float)
 ```
 
-# Power and modulo
+# 3. Power and modulo
 
 ```
 In : 2 ** 5
@@ -45,7 +45,7 @@ In : 33 % 10
 Out: 3
 ```
 
-# Augmented assignment
+# 4. Augmented assignment
 
 ```python
 n += 1   # n = n + 1
@@ -55,7 +55,7 @@ r %= 2   # r = r % 2
 # i++ has no meaning in Python
 ```
 
-# Booleans
+# 5. Booleans
 
 ```
 In : to_be = True
@@ -68,7 +68,7 @@ In : to_be and not_to_be
 Out: False
 ```
 
-# Truthiness
+# 6. Truthiness
 
 ```
 In : bool(0)
@@ -87,7 +87,7 @@ In : bool(0.0001)
 Out: True
 ```
 
-# Using booleans and truthiness
+# 7. Using booleans and truthiness
 
 ```python
 if True:
@@ -101,7 +101,7 @@ if 0:
     print("Never")
 ```
 
-# Reading from a file
+# 8. Reading from a file
 
 ```python
 f = open("foo.txt")
@@ -110,7 +110,7 @@ f.close()
 type(content)  # str
 ```
 
-# Reading lines
+# 9. Reading lines
 
 ```python
 f = open("bar.txt")
@@ -119,7 +119,7 @@ f.close()
 type(lines)  # list
 ```
 
-# Iterating over lines
+# 10. Iterating over lines
 
 ```python
 f = open("baz.txt")
@@ -128,7 +128,7 @@ for line in f:
 f.close()
 ```
 
-# Writing to a file
+# 11. Writing to a file
 
 ```python
 f = open("file.txt", "w")
@@ -138,7 +138,7 @@ f.flush()
 f.close()
 ```
 
-# Appending to a file
+# 12. Appending to a file
 
 ```python
 f = open("file.txt", "a")
@@ -147,7 +147,7 @@ f.flush()
 f.close()
 ```
 
-# Opening with scope
+# 13. Opening with scope
 
 ```python
 with open("file.txt", "r") as f:
@@ -156,7 +156,7 @@ with open("file.txt", "r") as f:
 
 - File is closed automatically at end of block
 
-# Code blocks
+# 14. Code blocks
 
 Blocks start with `:` and indent 4 spaces
 

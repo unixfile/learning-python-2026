@@ -13,7 +13,7 @@ https://github.com/unixfile/learning-python-2026
 - Comments and object inspection
 - Strings and f-strings
 
-# Tooling setup
+# 1. Tooling setup
 
 ## The uv package/project manager tool
 
@@ -41,7 +41,7 @@ $ uvx python
 $ uvx ipython
 ```
 
-# Tooling setup, continued...
+# 2. Tooling setup, continued...
 
 ## Installing Python, as opposed to running with uvx
 
@@ -70,7 +70,7 @@ https://pypi.org
 - Legacy tooling, now part of uv: pip/pipx, venv
 - Editor/IDE: Find one you like. Many use VS Code/Codium
 
-# Interactive mode
+# 3. Interactive mode
 
 ## Invoking the IPython shell/repl
 
@@ -98,7 +98,7 @@ In : "Hello world!"
 Out: 'Hello world!'
 ```
 
-# Interactive mode, continued...
+# 4. Interactive mode, continued...
 
 ## Variable assignment
 
@@ -110,7 +110,7 @@ In : type(some_number)
 Out: int
 ```
 
-# Variable naming conventions
+# 5. Variable naming conventions
 
 ```
 my_variable      variables, functions
@@ -120,7 +120,7 @@ MAX_SIZE         constants
 
 - More on classes later
 
-# Special variables
+# 6. Special variables
 
 ```
 _ = "throw-away variable, by convention"
@@ -128,7 +128,7 @@ _my_var = "this is a private variable"
 __dunder__  # Special built-in names, eg __main__, __name__
 ```
 
-# Non-interactive (real) programming
+# 7. Non-interactive (real) programming
 
 ## Script with input/output
 
@@ -144,7 +144,7 @@ print(ip)
 $ python3 script.py
 ```
 
-# Alternative execution for POSIX systems
+# 8. Alternative execution for POSIX systems
 
 ## Add shebang line on-top
 
@@ -166,7 +166,7 @@ $ chmod +x script.py
 $ ./script.py
 ```
 
-# Comments
+# 9. Comments
 
 ```python
 # This is a comment
@@ -180,7 +180,7 @@ Write your essay here.
 """
 ```
 
-# Object inspection
+# 10. Object inspection
 
 ```python
 help(my_var)  # Provides object documentation
@@ -190,7 +190,7 @@ dir(my_var)   # List object members
 
 - In Python, almost everything is an object
 
-# Python strings
+# 11. Python strings
 
 ```python
 s1 = "string with double quotes"
@@ -202,7 +202,7 @@ s3 = """
 """
 ```
 
-# Some string methods
+# 12. Some string methods
 
 ```
 In : s = "banan melon kiwi citron"
@@ -215,7 +215,7 @@ In : ".".join(parts)
 Out: '192.168.2.1'
 ```
 
-# Chaining methods
+# 13. Chaining methods
 
 ```
 In : s = "   Some string   "
@@ -226,7 +226,7 @@ In : s.lower().strip()
 Out: 'some string'
 ```
 
-# Python f-strings
+# 14. Python f-strings
 
 ```
 In : name = "Alice"
@@ -242,7 +242,7 @@ In : f"Pi is {pi:.2f}."
 Out: 'Pi is 3.14.'
 ```
 
-# More on strings
+# 15. More on strings
 
 ```
 In : "ocean" in "Explore the ocean depths"
