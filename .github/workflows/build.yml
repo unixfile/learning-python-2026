@@ -7,20 +7,32 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: ghcr.io/${{ github.repository }}:latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build
+        run: make
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: build/
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
     permissions:
       contents: write
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
-
-      - name: Install pandoc and LaTeX
-        run: sudo apt-get install -y pandoc texlive-latex-base texlive-fonts-recommended texlive-latex-extra
-
-      - name: Build
-        run: make
+      - uses: actions/download-artifact@v4
+        with:
+          name: build
+          path: build/
 
       - name: Publish to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
