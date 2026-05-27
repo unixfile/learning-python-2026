@@ -30,7 +30,7 @@ docker build -t learning-python-2026 .
 docker run --rm --user "$(id -u):$(id -g)" -v "$PWD":/work learning-python-2026 make
 ```
 
-Or, if you have [uv](https://docs.astral.sh/uv/) and [pandoc](https://pandoc.org) installed natively:
+Or, if you have [uv](https://docs.astral.sh/uv/), [pandoc](https://pandoc.org), and `make` installed natively:
 
 ```sh
 make
