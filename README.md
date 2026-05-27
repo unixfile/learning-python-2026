@@ -23,9 +23,16 @@ Or download a ZIP from the GitHub page.
 
 ## Build
 
-Requires [uv](https://docs.astral.sh/uv/) and [pandoc](https://pandoc.org).
+The easiest way to build is with Docker, which handles all dependencies:
 
+```sh
+docker build -t learning-python-2026 .
+docker run --rm --user "$(id -u):$(id -g)" -v "$PWD":/work learning-python-2026 make
 ```
+
+Or, if you have [uv](https://docs.astral.sh/uv/) and [pandoc](https://pandoc.org) installed natively:
+
+```sh
 make
 ```
 
@@ -48,5 +55,5 @@ Held by Frans for [Stockholms IT-förening](https://stockholmsitforening.se/).
 [PyPI, Python Package Index](https://pypi.org)
 
 [Python documentation](https://docs.python.org/3/)  
-[Python built-in functions](https://docs.python.org/3/library/functions.html)  
-[Python keywords](https://docs.python.org/3/reference/lexical_analysis.html#keywords)
+[Python keywords](https://docs.python.org/3/reference/lexical_analysis.html#keywords)  
+[Python built-in functions](https://docs.python.org/3/library/functions.html)
