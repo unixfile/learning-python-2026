@@ -219,11 +219,6 @@ except (ValueError, IndexError) as e:
 ## Stack traces
 
 ```{code-cell} ipython3
-def process_data():
-    value = int("abc")
-
-def main():
-    process_data()
-
-main()
+# Run this and read the traceback below
+int("abc")
 ```

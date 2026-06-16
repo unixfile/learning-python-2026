@@ -31,7 +31,7 @@ Out: {'banan', 'melon', 'kiwi'}
 ```
 
 - Duplicates are silently removed
-- Elements have no guaranteed order — indexing is not possible
+- Elements have no guaranteed order, so indexing is not possible
 
 ```
 In : fruits[0]
@@ -124,11 +124,15 @@ Out: 'okänd'
 ```python
 for fruit in fruit_colors:
     print(fruit)
-# äpple, banan, vindruva
+# äpple
+# banan
+# vindruva
 
 for color in fruit_colors.values():
     print(color)
-# grön, gul, lila
+# grön
+# gul
+# lila
 
 for fruit, color in fruit_colors.items():
     print(f"{fruit}: {color}")
@@ -228,4 +232,4 @@ ValueError: invalid literal for int() with base 10: 'abc'
 
 - The last line tells you what went wrong
 - The trace shows the call chain from outermost to innermost
-- Read from the bottom up — that's usually where the error is
+- Read from the bottom up, where the error usually is
