@@ -13,6 +13,7 @@ A course in Python programming. New lessons added as the course progresses.
 | 5 | 2026-06-09 18:30 | [lesson5.pdf](https://unixfile.github.io/learning-python-2026/lesson5.pdf) | [lesson5.ipynb](https://unixfile.github.io/learning-python-2026/lesson5.ipynb) |
 | 6 | 2026-06-16 18:30 | [lesson6.pdf](https://unixfile.github.io/learning-python-2026/lesson6.pdf) | [lesson6.ipynb](https://unixfile.github.io/learning-python-2026/lesson6.ipynb) |
 | 7 | 2026-06-23 18:30 | [lesson7.pdf](https://unixfile.github.io/learning-python-2026/lesson7.pdf) | [lesson7.ipynb](https://unixfile.github.io/learning-python-2026/lesson7.ipynb) |
+| 8 | 2026-06-30 18:30 | [lesson8.pdf](https://unixfile.github.io/learning-python-2026/lesson8.pdf) | [lesson8.ipynb](https://unixfile.github.io/learning-python-2026/lesson8.ipynb) |
 
 ## Get the material
 
