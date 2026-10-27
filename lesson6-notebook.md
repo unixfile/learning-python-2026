@@ -14,6 +14,44 @@ kernelspec:
 
 Run cells with Shift+Enter.
 
+## Exception handling
+
+```{code-cell} ipython3
+numbers = [1, 2, 3]
+
+try:
+    print(numbers[5])
+except IndexError:
+    print("Index out of range")
+```
+
+## Multiple exception types
+
+```{code-cell} ipython3
+try:
+    value = int("abc")
+    numbers = [1, 2, 3]
+    print(numbers[5])
+except ValueError:
+    print("Not a valid number")
+except IndexError:
+    print("Index out of range")
+```
+
+```{code-cell} ipython3
+try:
+    value = int("abc")
+except (ValueError, IndexError) as e:
+    print(f"An error occurred: {e}")
+```
+
+## Stack traces
+
+```{code-cell} ipython3
+# Run this and read the traceback below
+int("abc")
+```
+
 ## Regular expressions: a first match
 
 ```{code-cell} ipython3
@@ -73,101 +111,4 @@ re.search(r'.*', text, flags=re.DOTALL).group()   # now spans both lines
 
 ```{code-cell} ipython3
 re.escape("$^*+?{}")
-```
-
-## Defining functions
-
-```{code-cell} ipython3
-def multiply(a, b):
-    """Return the product of two numbers."""
-    return a * b
-
-multiply(3, 4), multiply(25, 25)
-```
-
-## Arguments
-
-```{code-cell} ipython3
-def greet(name, age, greeting='Hello'):
-    print(f'{greeting}, {name}! You are {age} years old.')
-
-greet('Alice', 30)
-greet(greeting='Good afternoon', age=80, name='John')
-greet('Taylor', 34, greeting='Hi')
-```
-
-## Scope: where Python looks for a name
-
-```{code-cell} ipython3
-x = "global"
-
-def outer():
-    x = "enclosing"
-    def inner():
-        x = "local"
-        print(x)
-    inner()
-    print(x)
-
-outer()
-print(x)
-```
-
-```{code-cell} ipython3
-print(max)   # the built-in
-max = 3      # shadows it
-print(max)
-del max      # restore the built-in
-```
-
-## The * and ** operators
-
-```{code-cell} ipython3
-def total(*args):        # collect into a tuple
-    return sum(args)
-
-nums = [1, 2, 3]
-total(1, 2, 3), total(*nums)
-```
-
-```{code-cell} ipython3
-def show(**kwargs):      # collect into a dict
-    print(kwargs)
-
-show(a=1, b=2)
-show(**{'a': 1, 'b': 2})
-```
-
-## Lambda expressions
-
-```{code-cell} ipython3
-power = lambda x, y: x ** y
-power(2, 10)
-```
-
-```{code-cell} ipython3
-people = {'Bob': 25, 'Dave': 20, 'Alice': 30}
-sorted(people.items(), key=lambda item: item[1])
-```
-
-## The mutable default trap
-
-```{code-cell} ipython3
-def add_item(item, basket=[]):   # basket is evaluated once!
-    basket.append(item)
-    return basket
-
-print(add_item('a'))
-print(add_item('b'))   # surprise: the same list is reused
-```
-
-```{code-cell} ipython3
-def add_item(item, basket=None):
-    if basket is None:
-        basket = []
-    basket.append(item)
-    return basket
-
-print(add_item('a'))
-print(add_item('b'))
 ```

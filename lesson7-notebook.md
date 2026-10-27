@@ -80,20 +80,6 @@ buddy.bark()
 buddy.dog_years()
 ```
 
-## Static methods
-
-```{code-cell} ipython3
-class MathOps:
-    @staticmethod
-    def add(x, y):
-        return x + y
-    @staticmethod
-    def square(x):
-        return x * x
-
-MathOps.add(5, 3), MathOps.square(4)
-```
-
 ## Magic methods
 
 ```{code-cell} ipython3
@@ -110,44 +96,6 @@ Vec(3)   # the cell echo uses __repr__
 
 ```{code-cell} ipython3
 Vec(3) == Vec(3), Vec(3) == Vec(4)   # __eq__ defines ==
-```
-
-## Protected and private attributes
-
-```{code-cell} ipython3
-class MyClass:
-    def __init__(self, value):
-        self._protected = value   # convention: internal use
-        self.__private = value    # name-mangled to _MyClass__private
-    def get_private(self):
-        return self.__private
-
-obj = MyClass(10)
-obj._protected, obj.get_private(), obj._MyClass__private
-```
-
-## Properties
-
-```{code-cell} ipython3
-class Dog:
-    def __init__(self, age):
-        self._age = age
-    @property
-    def age(self):
-        return self._age
-    @age.setter
-    def age(self, value):
-        if value < 0:
-            raise ValueError('age must be >= 0')
-        self._age = value
-
-d = Dog(3)
-d.age = 5      # the setter runs and validates
-d.age
-```
-
-```{code-cell} ipython3
-d.age = -1     # the setter rejects it (expected ValueError)
 ```
 
 ## Data classes
@@ -202,6 +150,58 @@ class Car:
         return self.engine.start()
 
 Car().drive()
+```
+
+## Further reading: static methods
+
+```{code-cell} ipython3
+class MathOps:
+    @staticmethod
+    def add(x, y):
+        return x + y
+    @staticmethod
+    def square(x):
+        return x * x
+
+MathOps.add(5, 3), MathOps.square(4)
+```
+
+## Further reading: protected and private attributes
+
+```{code-cell} ipython3
+class MyClass:
+    def __init__(self, value):
+        self._protected = value   # convention: internal use
+        self.__private = value    # name-mangled to _MyClass__private
+    def get_private(self):
+        return self.__private
+
+obj = MyClass(10)
+obj._protected, obj.get_private(), obj._MyClass__private
+```
+
+## Further reading: properties
+
+```{code-cell} ipython3
+class Dog:
+    def __init__(self, age):
+        self._age = age
+    @property
+    def age(self):
+        return self._age
+    @age.setter
+    def age(self, value):
+        if value < 0:
+            raise ValueError('age must be >= 0')
+        self._age = value
+
+d = Dog(3)
+d.age = 5      # the setter runs and validates
+d.age
+```
+
+```{code-cell} ipython3
+d.age = -1     # the setter rejects it (expected ValueError)
 ```
 
 ## Further reading: __repr__ vs __str__

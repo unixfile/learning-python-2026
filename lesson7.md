@@ -9,10 +9,8 @@ https://github.com/unixfile/learning-python-2026
 - Objects and classes
 - Initialisation and `self`
 - Class attributes vs instance attributes
-- Instance and static methods
+- Instance methods
 - Magic methods
-- Protected and private attributes
-- Properties
 - Data classes
 - Inheritance
 - Composition
@@ -109,29 +107,7 @@ buddy.bark()        # Buddy says woof!
 buddy.dog_years()   # 21
 ```
 
-# 6 Static methods
-
-- Methods that belong to the class but do not receive `self`
-- Useful for utilities that are logically related to the class
-
-```python
-class MathOps:
-    @staticmethod
-    def add(x, y):
-        return x + y
-
-    @staticmethod
-    def square(x):
-        return x * x
-
-MathOps.add(5, 3)   # 8
-MathOps.square(4)   # 16
-
-ops = MathOps()
-ops.add(2, 2)   # 4 (works on an instance too)
-```
-
-# 7 Magic methods
+# 6 Magic methods
 
 Dunder methods let objects hook into built-in syntax:
 
@@ -154,49 +130,7 @@ print(Vec(3))      # Vec(3)
 Vec(3) == Vec(3)   # True
 ```
 
-# 8 Protected and private attributes
-
-```python
-class MyClass:
-    def __init__(self, value):
-        self._protected = value   # internal use
-        self.__private  = value   # name-mangled
-    def get_private(self):
-        return self.__private
-
-obj = MyClass(10)
-obj._protected           # 10  ('hands off')
-obj._MyClass__private    # name-mangled access
-obj.get_private()        # 10  (preferred)
-```
-
-- Single underscore `_` is a convention meaning "internal"
-- Double underscore `__` mangles `__x` to `_ClassName__x`
-- Neither is truly hidden; Python enforces nothing
-
-# 9 Properties
-
-Properties give attribute-style access while running code:
-
-```python
-class Dog:
-    def __init__(self, age):
-        self._age = age
-    @property
-    def age(self):        # getter
-        return self._age
-    @age.setter
-    def age(self, value):     # setter
-        if value < 0:
-            raise ValueError('age must be >= 0')
-        self._age = value
-```
-
-- `d.age` reads through the getter
-- `d.age = 5` runs the setter, which validates
-- `@age.deleter` likewise handles `del d.age`
-
-# 10 Data classes
+# 7 Data classes
 
 ```python
 from dataclasses import dataclass
@@ -215,7 +149,7 @@ p == Point(1.0, 2.0)  # True
 - Fields can have defaults, e.g. `kind: str = 'dog'`
 - Defaulted fields must come after the others
 
-# 11 Inheritance
+# 8 Inheritance
 
 ```python
 class Animal:
@@ -236,7 +170,7 @@ class Puppy(Dog):
 - Override a method by redefining it in the subclass
 - `super()` calls the parent's version of a method
 
-# 12 Composition
+# 9 Composition
 
 A class can *contain* another object instead of inheriting:
 
@@ -257,6 +191,70 @@ car.drive()    # 'vroom'
 
 - Prefer composition when the relationship is "has a", not "is a"
 - A `Car` *has an* `Engine`; it is not an `Engine`
+
+# Further reading: static methods
+
+- Methods that belong to the class but do not receive `self`
+- Useful for utilities that are logically related to the class
+
+```python
+class MathOps:
+    @staticmethod
+    def add(x, y):
+        return x + y
+
+    @staticmethod
+    def square(x):
+        return x * x
+
+MathOps.add(5, 3)   # 8
+MathOps.square(4)   # 16
+
+ops = MathOps()
+ops.add(2, 2)   # 4 (works on an instance too)
+```
+
+# Further reading: protected and private attributes
+
+```python
+class MyClass:
+    def __init__(self, value):
+        self._protected = value   # internal use
+        self.__private  = value   # name-mangled
+    def get_private(self):
+        return self.__private
+
+obj = MyClass(10)
+obj._protected           # 10  ('hands off')
+obj._MyClass__private    # name-mangled access
+obj.get_private()        # 10  (preferred)
+```
+
+- Single underscore `_` is a convention meaning "internal"
+- Double underscore `__` mangles `__x` to `_ClassName__x`
+- Neither is truly hidden; Python enforces nothing
+
+# Further reading: properties
+
+Properties give attribute-style access while running code:
+
+```python
+class Dog:
+    def __init__(self, age):
+        self._age = age
+    @property
+    def age(self):        # getter
+        return self._age
+    @age.setter
+    def age(self, value):     # setter
+        if value < 0:
+            raise ValueError('age must be >= 0')
+        self._age = value
+```
+
+- `d.age` reads through the getter
+- `d.age = 5` runs the setter, which validates
+- `@age.deleter` likewise handles `del d.age`
 
 # Further reading: `__repr__` vs `__str__`
 
@@ -298,4 +296,4 @@ class Kennel:
 
 - `frozen=True` makes instances immutable and hashable
 - `field(default_factory=list)` avoids the mutable-default
-  trap from lesson 6
+  trap from lesson 5

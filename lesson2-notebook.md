@@ -79,50 +79,6 @@ if 0:
     print("never printed")
 ```
 
-## Files
-
-```{code-cell} ipython3
-f = open("mockup.txt")
-content = f.read()
-f.close()
-type(content), len(content)
-```
-
-```{code-cell} ipython3
-f = open("mockup.txt")
-lines = f.readlines()
-f.close()
-type(lines), len(lines)
-```
-
-```{code-cell} ipython3
-f = open("mockup.txt")
-for line in f:
-    print(line, end="")
-f.close()
-```
-
-```{code-cell} ipython3
-f = open("hello.txt", "w")
-f.write("Travel far, ")
-f.write("meet yourself.\n")
-f.flush()
-f.close()
-```
-
-```{code-cell} ipython3
-with open("hello.txt", "r") as f:
-    print(f.read())
-```
-
-```{code-cell} ipython3
-with open("hello.txt", "a") as f:
-    f.write("Appending...\n")
-
-with open("hello.txt", "r") as f:
-    print(f.read())
-```
-
 ## Code blocks
 
 ```{code-cell} ipython3
@@ -133,4 +89,48 @@ if True:
         print(1 << i)
     print("kiwi")
     print("citron")
+```
+
+## if/elif/else
+
+```{code-cell} ipython3
+password = "12345"
+
+if password == "12345":
+    print("That's a bad password!")
+```
+
+```{code-cell} ipython3
+temperature = 8
+
+if temperature > 20:
+    print("It's warm")
+elif temperature > 10:
+    print("It's cool")
+elif temperature > 5:
+    print("It's cold")
+else:
+    print("It's normal Swedish temperature")
+```
+
+## Comparison operators
+
+```{code-cell} ipython3
+x, y = 5, 10
+x == y, x != y, x > y, x >= y, x < y, x <= y
+```
+
+## Logical operators
+
+```{code-cell} ipython3
+x, y, z = 15, 20, 5
+x > 10 and y > 10
+```
+
+```{code-cell} ipython3
+x > 20 or z < 10
+```
+
+```{code-cell} ipython3
+not (x > y)
 ```

@@ -8,8 +8,9 @@ https://github.com/unixfile/learning-python-2026
 
 - Numbers and arithmetic
 - Booleans and truthiness
-- Reading and writing files
 - Code blocks and indentation
+- if/elif/else
+- Comparison and logical operators
 
 # 1 Integers and floats
 
@@ -87,76 +88,7 @@ In : bool(0.0001)
 Out: True
 ```
 
-# 7 Using booleans and truthiness
-
-```python
-if True:
-    print("Always")
-if False:
-    print("Never")
-
-if 1337:
-    print("Always")
-if 0:
-    print("Never")
-```
-
-# 8 Reading from a file
-
-```python
-f = open("foo.txt")
-content = f.read()
-f.close()
-type(content)  # str
-```
-
-# 9 Reading lines
-
-```python
-f = open("bar.txt")
-lines = f.readlines()
-f.close()
-type(lines)  # list
-```
-
-# 10 Iterating over lines
-
-```python
-f = open("baz.txt")
-for line in f:
-    print(line)
-f.close()
-```
-
-# 11 Writing to a file
-
-```python
-f = open("file.txt", "w")
-f.write("Travel far, ")
-f.write("meet yourself.\n")
-f.flush()
-f.close()
-```
-
-# 12 Appending to a file
-
-```python
-f = open("file.txt", "a")
-f.write("Appending...\n")
-f.flush()
-f.close()
-```
-
-# 13 Opening with scope
-
-```python
-with open("file.txt", "r") as f:
-    data = f.read()
-```
-
-- File is closed automatically at end of block
-
-# 14 Code blocks
+# 7 Code blocks
 
 Blocks start with `:` and indent 4 spaces
 
@@ -171,3 +103,87 @@ if True:
 ```
 
 - Blocks can be nested
+
+# 8 Using booleans and truthiness
+
+```python
+if True:
+    print("Always")
+if False:
+    print("Never")
+
+if 1337:
+    print("Always")
+if 0:
+    print("Never")
+```
+
+# 9 if statement
+
+```python
+password = input("Choose a password: ")
+
+if password == "12345":
+    print("That's a bad password!")
+```
+
+- Condition is any boolean or truthy value
+- Block runs only when condition is `True`
+
+# 10 if/elif/else
+
+```python
+temperature = int(input("Current temperature: "))
+
+if temperature > 20:
+    print("It's warm")
+elif temperature > 10:
+    print("It's cool")
+elif temperature > 5:
+    print("It's cold")
+else:
+    print("It's normal Swedish temperature")
+```
+
+- Only one block runs; the rest are skipped
+
+# 11 Comparison operators
+
+```python
+x, y = 5, 10
+
+x == y    # False  — equal
+x != y    # True   — not equal
+x > y     # False  — greater than
+x >= y    # False  — greater than or equal
+x < y     # True   — less than
+x <= y    # True   — less than or equal
+```
+
+# 12 Logical operators
+
+```python
+x, y, z = 15, 20, 5
+
+if x > 10 and y > 10:
+    print("Both greater than 10")
+
+if x > 20 or z < 10:
+    print("At least one condition true")
+
+if not (x > y):
+    print("x is not greater than y")
+```
+
+# 13 Pythonic style
+
+```python
+# Preferred                   # Avoid
+if value is None: ...          # if value == None: ...
+if value is not None: ...      # if value != None: ...
+if my_list: ...                # if len(my_list) > 0: ...
+if not my_list: ...            # if len(my_list) == 0: ...
+if condition: ...              # if condition == True: ...
+```
+
+- A linter like `ruff` can flag these automatically

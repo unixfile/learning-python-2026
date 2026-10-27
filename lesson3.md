@@ -12,6 +12,9 @@ https://github.com/unixfile/learning-python-2026
 - Multidimensional lists
 - Mutability vs. immutability
 - Tuples
+- for loops and enumerate
+- break and continue
+- while loops
 
 # 1 Creating a list
 
@@ -153,3 +156,87 @@ Out: tuple
 ```
 
 - Use tuples for fixed data, lists for dynamic data
+
+# 12 for loop
+
+```python
+fruits = ["banan", "melon", "kiwi", "citron"]
+
+for fruit in fruits:
+    print(fruit)
+```
+
+- Think of `for` as "for each"
+- Works on any iterable: lists, strings, files, …
+
+# 13 range()
+
+```
+In : list(range(5))
+Out: [0, 1, 2, 3, 4]
+
+In : list(range(2, 8))
+Out: [2, 3, 4, 5, 6, 7]
+
+In : list(range(0, 10, 2))
+Out: [0, 2, 4, 6, 8]
+```
+
+# 14 break and continue
+
+```python
+# break exits the loop early
+for n in range(1, 10):
+    if n == 5:
+        break
+    print(n, end=' ')
+# Output: 1 2 3 4
+
+# continue skips to the next iteration
+for n in range(1, 10):
+    if n % 2 == 0:
+        continue
+    print(n, end=' ')
+# Output: 1 3 5 7 9
+```
+
+# 15 enumerate
+
+```python
+fruits = ["banan", "melon", "kiwi", "citron"]
+
+for index, fruit in enumerate(fruits):
+    print(f"{index}: {fruit}")
+
+# Output:
+# 0: banan
+# 1: melon
+# 2: kiwi
+# 3: citron
+```
+
+# 16 while loop
+
+```python
+i = 5
+while i > 0:
+    print(i, end=' ')
+    i -= 1
+# Output: 5 4 3 2 1
+```
+
+- Loop runs as long as the condition is `True`
+- Forgetting to update `i` creates an infinite loop
+
+# 17 while True
+
+```python
+while True:
+    user_input = input("Enter 'exit' to stop: ")
+    if user_input == 'exit':
+        break
+    print(f"You entered: {user_input}")
+```
+
+- `break` is the only way out of a `while True:` loop
+- Useful for menus and simple REPLs

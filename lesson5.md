@@ -6,230 +6,151 @@ https://github.com/unixfile/learning-python-2026
 
 ## Today
 
-- Sets and set operations
-- Dictionaries
-- Exception handling
-- Reading stack traces
+- Defining functions and arguments
+- Default argument values
+- Scope: where Python looks for a name
+- `*args` and `**kwargs`
+- Lambda expressions
 
-# 1 Sets
-
-```
-In : my_set = {3, 7, 'gamma', 'echo'}
-In : type(my_set)
-Out: set
-```
-
-- A set is an unordered collection of **unique** elements
-- Sets are mutable
-
-# 2 Set idiosyncrasies
-
-```
-In : fruits = {'banan', 'banan', 'melon', 'kiwi'}
-In : fruits
-Out: {'banan', 'melon', 'kiwi'}
-```
-
-- Duplicates are silently removed
-- Elements have no guaranteed order, so indexing is not possible
-
-```
-In : fruits[0]
-...
-TypeError: 'set' object is not subscriptable
-```
-
-# 3 Adding and removing
-
-```
-In : countries = {'Brasilien', 'Chile'}
-
-In : countries.add('Bolivia')
-In : countries
-Out: {'Brasilien', 'Chile', 'Bolivia'}
-
-In : countries.update({'Brasilien', 'Paraguay'})
-In : countries
-Out: {'Brasilien', 'Chile', 'Bolivia', 'Paraguay'}
-
-In : countries.remove('Sverige')   # KeyError if missing
-In : countries.discard('Sverige')  # silent no-op if missing
-```
-
-# 4 Set operations
-
-```
-In : low = {1, 2, 3, 4}
-In : high = {3, 4, 5, 6}
-
-In : low | high   # union
-Out: {1, 2, 3, 4, 5, 6}
-
-In : low & high   # intersection
-Out: {3, 4}
-
-In : low ^ high   # symmetric difference
-Out: {1, 2, 5, 6}
-
-In : low - high   # difference
-Out: {1, 2}
-```
-
-# 5 Set comprehensions
-
-```
-In : squares = {x**2 for x in range(6)}
-In : squares
-Out: {0, 1, 4, 9, 16, 25}
-
-In : evens = {x for x in range(10) if x % 2 == 0}
-In : evens
-Out: {0, 2, 4, 6, 8}
-```
-
-- Same syntax as list comprehensions but with `{}`
-
-# 6 Dictionaries
-
-```
-In : fruit_colors = {
-   :     'äpple':   'grön',
-   :     'banan':   'gul',
-   :     'vindruva': 'lila',
-   : }
-In : type(fruit_colors)
-Out: dict
-```
-
-- A dictionary stores key-value pairs
-- Dictionaries are mutable and ordered (since Python 3.7)
-
-# 7 Accessing values
-
-```
-In : fruit_colors['banan']
-Out: 'gul'
-
-In : fruit_colors['citron']              # KeyError!
-In : fruit_colors.get('citron')          # None, no crash
-In : fruit_colors.get('citron', 'okänd')
-Out: 'okänd'
-```
-
-- `[]` raises `KeyError` when the key is missing
-- `.get()` returns `None` (or a default) instead
-
-# 8 Looping over dictionaries
+# 1 Defining functions
 
 ```python
-for fruit in fruit_colors:
-    print(fruit)
-# äpple
-# banan
-# vindruva
+# Definition
+def multiply(a, b):
+    """Return the product of two numbers."""
+    return a * b
 
-for color in fruit_colors.values():
-    print(color)
-# grön
-# gul
-# lila
-
-for fruit, color in fruit_colors.items():
-    print(f"{fruit}: {color}")
-# äpple: grön
-# banan: gul
-# vindruva: lila
+# Invocation (calling)
+multiply(3, 4)    # 12
+multiply(25, 25)  # 625
 ```
 
-# 9 Modifying dictionaries
+- `def` declares a function; `return` sends a value back
+- A function with no `return` returns `None`
 
-```
-In : fruit_colors['äpple'] = 'röd'    # update existing
-In : fruit_colors['mango'] = 'orange' # add new key
-
-In : fruit_colors.pop('banan')
-Out: 'gul'
-
-In : fruit_colors.update({'kiwi': 'grön', 'äpple': 'grön'})
-```
-
-# 10 Nested dictionaries
-
-```
-In : betyg = {
-   :     'Alice': {'Matte': 85, 'Kemi': 92},
-   :     'Bob':   {'Matte': 78, 'Kemi': 88},
-   : }
-
-In : betyg['Alice']['Matte']
-Out: 85
-
-In : betyg['Bob']['Engelska'] = 87
-```
-
-# 11 Dictionary comprehensions
-
-```
-In : squares = {x: x**2 for x in range(5)}
-In : squares
-Out: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
-```
-
-```
-In : original = {'äpple': 1, 'banan': 2, 'körsbär': 3}
-In : swapped = {v: k for k, v in original.items()}
-In : swapped
-Out: {1: 'äpple', 2: 'banan', 3: 'körsbär'}
-```
-
-# 12 Exception handling
+# 2 Arguments
 
 ```python
-numbers = [1, 2, 3]
+def greet(name, age, greeting='Hello'):
+    print(f'{greeting}, {name}! You are {age} years old.')
 
-try:
-    print(numbers[5])
-except IndexError:
-    print("Index out of range")
+greet('Alice', 30)
+# Hello, Alice! You are 30 years old.
+
+greet(greeting='Good afternoon', age=80, name='John')
+# Good afternoon, John! You are 80 years old.
+
+greet('Taylor', 34, greeting='Hi')
+# Hi, Taylor! You are 34 years old.
 ```
 
-- `try` runs the block; if an exception is raised Python jumps to `except`
-- Code after the raising line inside `try` is skipped
+- Positional args go by order; named args make order irrelevant
+- `greeting` has a default, used when not supplied
+- When mixing, positional arguments must come first
 
-# 13 Multiple exception types
+# 3 Scope: where Python looks for a name
+
+The same name can exist in several places. Python searches them
+from the inside out and uses the first one it finds:
+
+1. **L**ocal: inside the current function
+2. **E**nclosing: a function wrapped around it
+3. **G**lobal: the top level of the file
+4. **B**uilt-in: names Python provides, like `print`, `len`, `max`
+
+- The first match wins; the search stops there
+- This inside-out order is nicknamed the **LEGB rule**
+
+# 4 Scope in practice
 
 ```python
-try:
-    value = int("abc")
-    numbers = [1, 2, 3]
-    print(numbers[5])
-except ValueError:
-    print("Not a valid number")
-except IndexError:
-    print("Index out of range")
+x = "global"
+
+def outer():
+    x = "enclosing"
+    def inner():
+        x = "local"
+        print(x)   # local
+    inner()
+    print(x)       # enclosing
+
+outer()
+print(x)           # global
 ```
 
 ```python
-# Catch several types in one handler
-try:
-    ...
-except (ValueError, IndexError) as e:
-    print(f"An error occurred: {e}")
+print(max)   # <built-in function max>
+max = 3      # shadows the built-in!
+print(max)   # 3
 ```
 
-# 14 Stack traces
+# 5 The * and ** operators
 
-```
-Traceback (most recent call last):
-  File "example.py", line 10, in <module>
-    main()
-  File "example.py", line 7, in main
-    process_data()
-  File "example.py", line 4, in process_data
-    value = int("abc")
-ValueError: invalid literal for int() with base 10: 'abc'
+```python
+def total(*args):     # collect into a tuple
+    return sum(args)
+
+total(1, 2, 3)        # 6
+
+nums = [1, 2, 3]
+total(*nums)          # 6  (unpack the list)
 ```
 
-- The last line tells you what went wrong
-- The trace shows the call chain from outermost to innermost
-- Read from the bottom up, where the error usually is
+```python
+def show(**kwargs):   # collect into a dict
+    print(kwargs)
+
+show(a=1, b=2)        # {'a': 1, 'b': 2}
+
+d = {'a': 1, 'b': 2}
+show(**d)             # same, by unpacking d
+```
+
+- In a `def`, `*args`/`**kwargs` collect extra arguments
+- In a call, `*`/`**` unpack a list/dict into arguments
+
+# 6 Lambda expressions
+
+```python
+# These two are equivalent
+def power(x, y):
+    return x ** y
+
+power = lambda x, y: x ** y
+```
+
+```python
+people = {'Bob': 25, 'Dave': 20, 'Alice': 30}
+
+# Sort items by value (age)
+sorted(people.items(), key=lambda item: item[1])
+# [('Dave', 20), ('Bob', 25), ('Alice', 30)]
+```
+
+- A lambda is a small, anonymous, one-expression function
+- Handy as a throw-away `key=` argument to `sorted`, `max`, etc.
+
+# Further reading: the mutable default trap
+
+```python
+def add_item(item, basket=[]):   # evaluated once!
+    basket.append(item)
+    return basket
+
+add_item('a')   # ['a']
+add_item('b')   # ['a', 'b']   reused!
+```
+
+```python
+def add_item(item, basket=None):
+    if basket is None:
+        basket = []
+    basket.append(item)
+    return basket
+
+add_item('a')   # ['a']
+add_item('b')   # ['b']
+```
+
+- A default value is evaluated **once**, when the function is defined
+- Use `None` as the default and build the mutable object inside
