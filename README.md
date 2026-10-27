@@ -6,14 +6,14 @@ A course in Python programming. New lessons added as the course progresses.
 
 | Lesson | Date | Slides | Notebook |
 |--------|------|--------|----------|
-| 1 | 2026-05-12 18:30 | [lesson1.pdf](https://unixfile.github.io/learning-python-2026/lesson1.pdf) | [lesson1.ipynb](https://unixfile.github.io/learning-python-2026/lesson1.ipynb) |
-| 2 | 2026-05-19 18:30 | [lesson2.pdf](https://unixfile.github.io/learning-python-2026/lesson2.pdf) | [lesson2.ipynb](https://unixfile.github.io/learning-python-2026/lesson2.ipynb) |
-| 3 | 2026-05-26 18:30 | [lesson3.pdf](https://unixfile.github.io/learning-python-2026/lesson3.pdf) | [lesson3.ipynb](https://unixfile.github.io/learning-python-2026/lesson3.ipynb) |
-| 4 | 2026-06-02 18:30 | [lesson4.pdf](https://unixfile.github.io/learning-python-2026/lesson4.pdf) | [lesson4.ipynb](https://unixfile.github.io/learning-python-2026/lesson4.ipynb) |
-| 5 | 2026-06-09 18:30 | [lesson5.pdf](https://unixfile.github.io/learning-python-2026/lesson5.pdf) | [lesson5.ipynb](https://unixfile.github.io/learning-python-2026/lesson5.ipynb) |
-| 6 | 2026-06-16 18:30 | [lesson6.pdf](https://unixfile.github.io/learning-python-2026/lesson6.pdf) | [lesson6.ipynb](https://unixfile.github.io/learning-python-2026/lesson6.ipynb) |
-| 7 | 2026-06-23 18:30 | [lesson7.pdf](https://unixfile.github.io/learning-python-2026/lesson7.pdf) | [lesson7.ipynb](https://unixfile.github.io/learning-python-2026/lesson7.ipynb) |
-| 8 | 2026-06-30 18:30 | [lesson8.pdf](https://unixfile.github.io/learning-python-2026/lesson8.pdf) | [lesson8.ipynb](https://unixfile.github.io/learning-python-2026/lesson8.ipynb) |
+| 1 | 2026-10-27 18:00 | [lesson1.pdf](https://unixfile.github.io/learning-python-2026/lesson1.pdf) | [lesson1.ipynb](https://unixfile.github.io/learning-python-2026/lesson1.ipynb) |
+| 2 | 2026-11-03 18:00 | [lesson2.pdf](https://unixfile.github.io/learning-python-2026/lesson2.pdf) | [lesson2.ipynb](https://unixfile.github.io/learning-python-2026/lesson2.ipynb) |
+| 3 | 2026-11-10 18:00 | [lesson3.pdf](https://unixfile.github.io/learning-python-2026/lesson3.pdf) | [lesson3.ipynb](https://unixfile.github.io/learning-python-2026/lesson3.ipynb) |
+| 4 | 2026-11-17 18:00 | [lesson4.pdf](https://unixfile.github.io/learning-python-2026/lesson4.pdf) | [lesson4.ipynb](https://unixfile.github.io/learning-python-2026/lesson4.ipynb) |
+| 5 | 2026-11-24 18:00 | [lesson5.pdf](https://unixfile.github.io/learning-python-2026/lesson5.pdf) | [lesson5.ipynb](https://unixfile.github.io/learning-python-2026/lesson5.ipynb) |
+| 6 | 2026-12-01 18:00 | [lesson6.pdf](https://unixfile.github.io/learning-python-2026/lesson6.pdf) | [lesson6.ipynb](https://unixfile.github.io/learning-python-2026/lesson6.ipynb) |
+| 7 | 2026-12-08 18:00 | [lesson7.pdf](https://unixfile.github.io/learning-python-2026/lesson7.pdf) | [lesson7.ipynb](https://unixfile.github.io/learning-python-2026/lesson7.ipynb) |
+| 8 | 2026-12-15 18:00 | [lesson8.pdf](https://unixfile.github.io/learning-python-2026/lesson8.pdf) | [lesson8.ipynb](https://unixfile.github.io/learning-python-2026/lesson8.ipynb) |
 
 ## Get the material
 
