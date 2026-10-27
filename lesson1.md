@@ -12,6 +12,7 @@ https://github.com/unixfile/learning-python-2026
 - Scripts and execution
 - Comments and object inspection
 - Strings and f-strings
+- AI coding agents
 
 # 1 Tooling setup
 
@@ -261,3 +262,22 @@ l
 l
 o
 ```
+
+# 16 AI coding agents
+
+## Agents that read, write and run code in your terminal
+
+https://github.com/anthropics/claude-code
+
+https://github.com/openai/codex
+
+## Price, October 2026
+
+About 250 kr/month each, including VAT
+
+## For anyone, at any level
+
+- Teacher, manual and coder in one
+- Ask them to explain code, not only to write it
+
+## Use with care and your own judgment
