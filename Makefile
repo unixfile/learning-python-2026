@@ -19,7 +19,8 @@ $(BUILD):
 	mkdir -p $(BUILD)
 
 $(BUILD)/%.pdf: %.md | $(BUILD)
-	pandoc -t beamer --slide-level=1 -o $@ $<
+	pandoc -t beamer --slide-level=1 \
+	  -V header-includes='\hypersetup{pdfpagelayout=SinglePage}' -o $@ $<
 
 $(BUILD)/%.ipynb: %-notebook.md | $(BUILD)
 	uvx jupytext --to notebook --output $@ $<
