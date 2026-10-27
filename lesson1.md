@@ -46,7 +46,7 @@ $ uvx ipython
 ## Installing Python, as opposed to running with uvx
 
 ```
-$ uv python install --default --preview
+$ uv python install --default
 ```
 
 ## Run Python when installed
@@ -88,10 +88,10 @@ In : !ls
 
 ```
 In : print("Hello world!")
-Out: 'Hello world!'
+Hello world!
 ```
 
-## Auto-print convenience, not proper Python
+## Auto-print convenience, interactive only
 
 ```
 In : "Hello world!"
@@ -105,7 +105,7 @@ Out: 'Hello world!'
 ```
 In : some_number = 42
 In : some_number
-Out: 42  # auto-print, IPython only
+Out: 42  # auto-print, interactive only
 In : type(some_number)
 Out: int
 ```
@@ -124,9 +124,11 @@ MAX_SIZE         constants
 
 ```
 _ = "throw-away variable, by convention"
-_my_var = "this is a private variable"
+_my_var = "internal variable, by convention"
 __dunder__  # Special built-in names, eg __main__, __name__
 ```
+
+- In interactive mode, `_` holds the last result
 
 # 7 Non-interactive (real) programming
 
@@ -174,7 +176,7 @@ ip_addr = input("Enter an IP address: ")
 print(ip_addr)
 
 """
-This is a multiline comment.
+A string used as a multiline comment.
 
 Write your essay here.
 """
