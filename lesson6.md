@@ -7,6 +7,7 @@ https://github.com/unixfile/learning-python-2026
 ## Today
 
 - Exception handling
+- Raising exceptions
 - Reading stack traces
 - Regular expressions with the `re` module
 
@@ -45,7 +46,25 @@ except (ValueError, IndexError) as e:
     print(f"An error occurred: {e}")
 ```
 
-# 3 Stack traces
+# 3 Raising exceptions
+
+```python
+def withdraw(balance, amount):
+    if amount > balance:
+        raise ValueError("not enough money")
+    return balance - amount
+
+try:
+    withdraw(100, 250)
+except ValueError as e:
+    print(e)   # not enough money
+```
+
+- `raise` reports an error to whoever called the function
+- Pick the built-in type that fits: `ValueError`, `TypeError`, `KeyError`, ...
+- An exception that nobody catches stops the program with a stack trace
+
+# 4 Stack traces
 
 ```
 Traceback (most recent call last):
@@ -62,7 +81,7 @@ ValueError: invalid literal for int() with base 10: 'abc'
 - The trace shows the call chain from outermost to innermost
 - Read from the bottom up, where the error usually is
 
-# 4 Regular expressions
+# 5 Regular expressions
 
 - A character sequence that defines a search pattern
 - Used to search, or search-and-replace, in text
@@ -73,7 +92,7 @@ ValueError: invalid literal for int() with base 10: 'abc'
 
 https://regex101.com
 
-# 5 A first match
+# 6 A first match
 
 ```python
 import re
@@ -89,7 +108,7 @@ m.group()   # 'gracious King'
 - `r'...'` is a raw string: backslashes stay literal, so regex
   escapes like `\d` reach the engine unchanged
 
-# 6 Common patterns
+# 7 Common patterns
 
 ```
 .        any character except newline
@@ -107,7 +126,7 @@ a|b      either a or b
 \.       a literal dot (escape special chars)
 ```
 
-# 7 Greedy vs. non-greedy
+# 8 Greedy vs. non-greedy
 
 ```python
 line = "God save our gracious King"
@@ -122,9 +141,9 @@ re.search(r'G.*?o', line).group()
 ```
 
 - `?`, `+`, `*` are greedy; add `?` after them to go non-greedy
-- Greedy matching can be expensive on large strings
+- Greedy `.*` grabs as much as it can, then backs off until the rest fits
 
-# 8 Finding all matches
+# 9 Finding all matches
 
 ```python
 text = "The rain in Spain stays mainly in the plain."
@@ -137,7 +156,7 @@ re.findall(r'\b\w*ain\b', text)
 - `re.findall` returns every non-overlapping match as a list
 - `\b` is a word boundary, so `mainly` is skipped (no boundary after `ain`)
 
-# 9 Groups
+# 10 Groups
 
 ```python
 text = 'Berlin 1989-11-09 22:45 UTC+1'
@@ -148,11 +167,28 @@ m.group(0)   # '1989-11-09 22:45'
 m.group(1)   # '1989'
 m.group(2)   # '11'
 m.group(3)   # '09'
+m.groups()   # ('1989', '11', '09', '22', '45')
 ```
 
 - `( )` captures part of a match into a numbered group
 - `group(0)` is the whole match, same as `group()`
 - Named groups, flags and `re.escape`: see Further reading
+
+# 11 Search and replace
+
+```python
+text = "Call 08-123 456 78 before 17:00"
+
+re.sub(r'\d', 'X', text)
+# 'Call XX-XXX XXX XX before XX:XX'
+
+date = '1989-11-09'
+re.sub(r'(\d+)-(\d+)-(\d+)', r'\3/\2/\1', date)
+# '09/11/1989'
+```
+
+- `re.sub(pattern, replacement, text)` returns a new string
+- `\1`, `\2` in the replacement insert the captured groups
 
 # Further reading: named groups
 

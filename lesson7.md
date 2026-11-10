@@ -78,7 +78,7 @@ rex  = Dog('Rex')
 lola = Dog('Lola')
 
 Dog.species    # 'Canis familiaris'
-rex.species    # inherited from the class
+rex.species    # found on the class
 rex.name       # 'Rex'
 ```
 
@@ -146,6 +146,7 @@ p == Point(1.0, 2.0)  # True
 ```
 
 - `@dataclass` writes `__init__`, `__repr__`, `__eq__`
+- `x: float` is a type annotation: a hint for readers and tools, not enforced
 - Fields can have defaults, e.g. `kind: str = 'dog'`
 - Defaulted fields must come after the others
 
@@ -164,6 +165,8 @@ class Puppy(Dog):
     def __init__(self, name, owner):
         super().__init__(name)   # run parent init
         self.owner = owner
+    def speak(self):             # overrides Dog.speak
+        return f'{self.name} yips'
 ```
 
 - A subclass inherits the parent's attributes and methods

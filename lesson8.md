@@ -11,7 +11,7 @@ https://github.com/unixfile/learning-python-2026
 - Installing packages with `uv`
 - Virtual environments
 - Modules and the module guard pattern
-- Packages, `__init__.py` and `__all__`
+- Packages and `__init__.py`
 
 # 1 Libraries
 
@@ -73,20 +73,7 @@ sys.path
 
 - Don't name a file `re.py` or `random.py`: it shadows the real one
 
-# 5 Adding to the search path
-
-- `sys.path` is just a list, so code can append to it
-- Set `$PYTHONPATH` to add directories without editing code
-- Those directories appear near the front of `sys.path`
-
-```sh
-# POSIX
-export PYTHONPATH=/my/libs:/another/path
-# Windows
-set PYTHONPATH=C:\my\libs;C:\another\path
-```
-
-# 6 Installing packages with uv
+# 5 Installing packages with uv
 
 ```sh
 uv init myproj         # start a new project
@@ -100,7 +87,7 @@ uvx ruff               # run a tool, no install needed
 - `uv` resolves versions and downloads them from PyPI
 - The legacy `pip install` still works as `uv pip install`
 
-# 7 Using a package from PyPI
+# 6 Using a package from PyPI
 
 ```sh
 uv add rich          # install from PyPI
@@ -117,7 +104,7 @@ rich.print({'a': 1, 'b': [2, 3]})    # pretty print
 - Then `import rich` like any library you've seen
 - `rich` adds colour and pretty-printing to the terminal
 
-# 8 Virtual environments
+# 7 Virtual environments
 
 - An isolated set of packages, kept apart from the system Python
 - Each project gets its own, so versions never clash
@@ -130,7 +117,7 @@ uv venv           # or make the .venv explicitly
 - `uv` manages a `.venv` directory for you, no activation needed
 - Older workflow: `python -m venv .venv`, then activate it
 
-# 9 Modules
+# 8 Modules
 
 - A **module** is a single `.py` file you import elsewhere
 
@@ -148,7 +135,7 @@ greetings.hello('Alice')   # 'Hello, Alice!'
 - The module name is the filename without `.py`
 - Importing runs the file once, top to bottom
 
-# 10 The module guard pattern
+# 9 The module guard pattern
 
 ```python
 __name__ == '__main__'    # True when run directly
@@ -167,7 +154,7 @@ if __name__ == '__main__':
 - A file can be both a runnable script and an importable module
 - Code under the guard is skipped when the file is imported
 
-# 11 The main function pattern
+# 10 The main function pattern
 
 ```python
 def main():
@@ -181,7 +168,7 @@ if __name__ == '__main__':
 - Keeps temporary variables out of the global scope
 - The file stays importable without running `main()`
 
-# 12 Packages and `__init__.py`
+# 11 Packages and `__init__.py`
 
 - A **package** is a directory of modules
 - Reach a submodule with a dot: `mathpkg.adder`
@@ -200,26 +187,18 @@ mathpkg.add(2, 3)   # 5  (re-exported by __init__.py)
 - `__init__.py` runs when the package is first imported
 - Re-exporting there lets callers skip the submodule path
 
-# 13 Controlling star imports with `__all__`
+# 12 Where to go next
 
-```python
-# tools.py
-__all__ = ['foo', 'bar']   # the public interface
+## The official tutorial and the standard library
 
-def foo(): ...
-def bar(): ...
-def _helper(): ...
-```
+https://docs.python.org/3/tutorial/
 
-```python
-from tools import *
-foo()       # ok
-bar()       # ok
-_helper()   # NameError: not exported
-```
+https://docs.python.org/3/library/
 
-- `__all__` lists what `from module import *` brings in
-- Without it, `*` imports every name not starting with `_`
+## Practice
+
+- Pick a small task of your own and script it
+- Read other people's code, and ask an agent to explain what you don't follow
 
 # Further reading: subpackages
 
@@ -249,3 +228,37 @@ uv run python -m pytest     # inside the project env
 
 - `-m` runs a module from `sys.path` as if it were a script
 - The module sees `__name__ == '__main__'`, so its guard fires
+
+# Further reading: adding to the search path
+
+- `sys.path` is just a list, so code can append to it
+- Set `$PYTHONPATH` to add directories without editing code
+- Those directories appear near the front of `sys.path`
+
+```sh
+# POSIX
+export PYTHONPATH=/my/libs:/another/path
+# Windows
+set PYTHONPATH=C:\my\libs;C:\another\path
+```
+
+# Further reading: controlling star imports with `__all__`
+
+```python
+# tools.py
+__all__ = ['foo', 'bar']   # the public interface
+
+def foo(): ...
+def bar(): ...
+def _helper(): ...
+```
+
+```python
+from tools import *
+foo()       # ok
+bar()       # ok
+_helper()   # NameError: not exported
+```
+
+- `__all__` lists what `from module import *` brings in
+- Without it, `*` imports every name not starting with `_`

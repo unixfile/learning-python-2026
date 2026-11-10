@@ -131,9 +131,11 @@ class Puppy(Dog):
     def __init__(self, name, owner):
         super().__init__(name)  # run the parent's __init__
         self.owner = owner
+    def speak(self):            # overrides Dog.speak
+        return f'{self.name} yips'
 
 pup = Puppy('Rex', 'Sam')
-pup.name, pup.owner, pup.speak()
+pup.name, pup.owner, pup.speak(), Dog('Lola').speak()
 ```
 
 ## Composition
@@ -150,6 +152,32 @@ class Car:
         return self.engine.start()
 
 Car().drive()
+```
+
+## Exercises
+
+1. Write a class `Rectangle` with `width` and `height`, a method `area()` and a `__str__` method.
+
+```{code-cell} ipython3
+
+```
+
+2. Add `__eq__`, so that two rectangles with the same sides compare equal.
+
+```{code-cell} ipython3
+
+```
+
+3. Write the same class as a data class. Which methods did you no longer have to write?
+
+```{code-cell} ipython3
+
+```
+
+4. Write a subclass `Square` whose `__init__` takes one side and passes it on with `super()`.
+
+```{code-cell} ipython3
+
 ```
 
 ## Further reading: static methods
@@ -201,6 +229,8 @@ d.age
 ```
 
 ```{code-cell} ipython3
+:tags: [raises-exception]
+
 d.age = -1     # the setter rejects it (expected ValueError)
 ```
 
@@ -228,6 +258,8 @@ d          # the cell echo uses __repr__
 ## Further reading: frozen data classes and field()
 
 ```{code-cell} ipython3
+:tags: [raises-exception]
+
 from dataclasses import dataclass, field
 
 @dataclass(frozen=True)

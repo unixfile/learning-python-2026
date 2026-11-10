@@ -137,6 +137,32 @@ swapped = {v: k for k, v in original.items()}
 swapped
 ```
 
+## Exercises
+
+1. Write a function `is_even(n)` that returns `True` or `False`. Use it in a list comprehension to keep the even numbers in `range(20)`.
+
+```{code-cell} ipython3
+
+```
+
+2. Write a function `mean(*numbers)` that returns the average. Let it return `None` when called without arguments.
+
+```{code-cell} ipython3
+
+```
+
+3. Sort `['banan', 'melon', 'kiwi', 'citron']` by word length, using `sorted` and a lambda.
+
+```{code-cell} ipython3
+
+```
+
+4. Build a dictionary that maps each of those words to its length, with a dictionary comprehension.
+
+```{code-cell} ipython3
+
+```
+
 ## Further reading: the mutable default trap
 
 ```{code-cell} ipython3

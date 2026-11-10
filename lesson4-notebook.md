@@ -41,7 +41,6 @@ f.close()
 f = open("hello.txt", "w")
 f.write("Travel far, ")
 f.write("meet yourself.\n")
-f.flush()
 f.close()
 ```
 
@@ -73,10 +72,9 @@ fruits
 ```
 
 ```{code-cell} ipython3
-try:
-    fruits[0]
-except TypeError as e:
-    print(e)
+:tags: [raises-exception]
+
+fruits[0]  # TypeError: sets have no order, so no index
 ```
 
 ## Adding and removing
@@ -93,11 +91,13 @@ countries
 ```
 
 ```{code-cell} ipython3
-try:
-    countries.remove('Sverige')
-except KeyError as e:
-    print(f"KeyError: {e}")
-countries.discard('Sverige')
+:tags: [raises-exception]
+
+countries.remove('Sverige')  # KeyError: not in the set
+```
+
+```{code-cell} ipython3
+countries.discard('Sverige')  # silent no-op if missing
 ```
 
 ## Set operations
@@ -141,10 +141,9 @@ fruit_colors['banan']
 ```
 
 ```{code-cell} ipython3
-try:
-    fruit_colors['citron']
-except KeyError as e:
-    print(f"KeyError: {e}")
+:tags: [raises-exception]
+
+fruit_colors['citron']  # KeyError: no such key
 ```
 
 ```{code-cell} ipython3
@@ -202,4 +201,24 @@ betyg['Alice']['Matte']
 ```{code-cell} ipython3
 betyg['Bob']['Engelska'] = 87
 betyg
+```
+
+## Exercises
+
+1. Read `mockup.txt` and print how many lines and how many words it has.
+
+```{code-cell} ipython3
+
+```
+
+2. Collect the words of `mockup.txt` in a set. How many different words are there?
+
+```{code-cell} ipython3
+
+```
+
+3. Count how often each word occurs in `mockup.txt`, using a dictionary. Print each word with its count.
+
+```{code-cell} ipython3
+
 ```

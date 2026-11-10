@@ -74,6 +74,10 @@ s[:3], s[3:]
 s[::2], s[::-1]
 ```
 
+```{code-cell} ipython3
+"banan"[0:3], "banan"[-1]  # strings index and slice too
+```
+
 ## for loop
 
 ```{code-cell} ipython3
@@ -153,11 +157,10 @@ numbers
 ```
 
 ```{code-cell} ipython3
+:tags: [raises-exception]
+
 s = "hello"
-try:
-    s[0] = "H"
-except TypeError as e:
-    print(e)
+s[0] = "H"  # TypeError: strings are immutable
 ```
 
 ## Tuples
@@ -168,10 +171,9 @@ type(t), t[0]
 ```
 
 ```{code-cell} ipython3
-try:
-    t[0] = 99
-except TypeError as e:
-    print(e)
+:tags: [raises-exception]
+
+t[0] = 99  # TypeError: tuples are immutable
 ```
 
 ```{code-cell} ipython3
@@ -183,4 +185,24 @@ x, y
 ```{code-cell} ipython3
 single = (42,)
 type(single)
+```
+
+## Exercises
+
+1. Make a list of five numbers. Find the largest with a `for` loop and an `if`, without using `max`.
+
+```{code-cell} ipython3
+
+```
+
+2. Print the numbers from 1 to 20, but skip every multiple of 3.
+
+```{code-cell} ipython3
+
+```
+
+3. For each fruit in `fruits`, print its index and the fruit spelled backwards.
+
+```{code-cell} ipython3
+
 ```

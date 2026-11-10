@@ -90,6 +90,8 @@ In : s[::-1]
 Out: [5, 4, 3, 2, 1, 0]
 ```
 
+- Indexing and slicing work on strings too: `"banan"[0:3]` is `'ban'`
+
 # 7 for loop
 
 ```python

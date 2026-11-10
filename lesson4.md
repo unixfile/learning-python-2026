@@ -34,9 +34,11 @@ type(lines)  # list
 ```python
 f = open("baz.txt")
 for line in f:
-    print(line)
+    print(line, end="")
 f.close()
 ```
+
+- Each line keeps its `\n`, so `end=""` avoids blank lines in between
 
 # 4 Writing to a file
 
@@ -44,7 +46,6 @@ f.close()
 f = open("file.txt", "w")
 f.write("Travel far, ")
 f.write("meet yourself.\n")
-f.flush()
 f.close()
 ```
 
@@ -53,7 +54,6 @@ f.close()
 ```python
 f = open("file.txt", "a")
 f.write("Appending...\n")
-f.flush()
 f.close()
 ```
 
@@ -159,6 +159,7 @@ Out: 'okänd'
 
 - `[]` raises `KeyError` when the key is missing
 - `.get()` returns `None` (or a default) instead
+- `None` is Python's value for "nothing here"
 
 # 13 Looping over dictionaries
 

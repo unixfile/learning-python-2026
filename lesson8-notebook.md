@@ -190,7 +190,27 @@ import mathpkg
 mathpkg.add(2, 3), mathpkg.mul(2, 3)   # re-exported by __init__.py
 ```
 
-## Controlling star imports with __all__
+## Exercises
+
+1. Write a module `shapes.py` with a function `area(width, height)`, using `%%writefile`. Import it and call the function.
+
+```{code-cell} ipython3
+
+```
+
+2. Add a module guard to `shapes.py` that prints a demo. Run it with `!python3 shapes.py`, then check that importing it prints nothing.
+
+```{code-cell} ipython3
+
+```
+
+3. Explore a standard library module you have not used, eg `random`: try `dir(random)` and `help(random.choice)`, then pick a random fruit from a list.
+
+```{code-cell} ipython3
+
+```
+
+## Further reading: controlling star imports with __all__
 
 ```{code-cell} ipython3
 %%writefile tools.py
@@ -212,6 +232,8 @@ foo(), bar()         # only the names listed in __all__ arrive
 ```
 
 ```{code-cell} ipython3
+:tags: [raises-exception]
+
 _helper()            # not exported (expected NameError)
 ```
 

@@ -45,9 +45,25 @@ except (ValueError, IndexError) as e:
     print(f"An error occurred: {e}")
 ```
 
+## Raising exceptions
+
+```{code-cell} ipython3
+def withdraw(balance, amount):
+    if amount > balance:
+        raise ValueError("not enough money")
+    return balance - amount
+
+try:
+    withdraw(100, 250)
+except ValueError as e:
+    print(e)
+```
+
 ## Stack traces
 
 ```{code-cell} ipython3
+:tags: [raises-exception]
+
 # Run this and read the traceback below
 int("abc")
 ```
@@ -89,6 +105,44 @@ rgx = r'(\d{4})-(\d{2})-(\d{2})\s(\d{2}):(\d{2})'
 
 m = re.search(rgx, text)
 m.group(0), m.group(1), m.group(2), m.group(3)
+```
+
+## Search and replace
+
+```{code-cell} ipython3
+text = "Call 08-123 456 78 before 17:00"
+re.sub(r'\d', 'X', text)
+```
+
+```{code-cell} ipython3
+date = '1989-11-09'
+re.sub(r'(\d+)-(\d+)-(\d+)', r'\3/\2/\1', date)
+```
+
+## Exercises
+
+1. Write a function `to_int(text, default=0)` that returns `int(text)`, or `default` when the text is not a number.
+
+```{code-cell} ipython3
+
+```
+
+2. Write a function `divide(a, b)` that raises a `ValueError` with a clear message when `b` is 0. Call it inside `try`/`except`.
+
+```{code-cell} ipython3
+
+```
+
+3. Find every time of day, such as `07:15`, in `'Trains leave at 07:15, 12:40 and 18:05.'`
+
+```{code-cell} ipython3
+
+```
+
+4. Use `re.sub` to replace every vowel in a sentence with `*`.
+
+```{code-cell} ipython3
+
 ```
 
 ## Further reading: named groups
