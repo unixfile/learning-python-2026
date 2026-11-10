@@ -58,29 +58,6 @@ with open("hello.txt", "r") as f:
     print(f.read())
 ```
 
-## List comprehensions
-
-```{code-cell} ipython3
-squares = [x**2 for x in range(6)]
-squares
-```
-
-```{code-cell} ipython3
-evens = [x for x in range(10) if x % 2 == 0]
-evens
-```
-
-## Generator expressions
-
-```{code-cell} ipython3
-squares = (x**2 for x in range(100_000_000))
-type(squares)
-```
-
-```{code-cell} ipython3
-next(squares), next(squares), next(squares)
-```
-
 ## Sets
 
 ```{code-cell} ipython3
@@ -144,18 +121,6 @@ low ^ high  # symmetric difference
 
 ```{code-cell} ipython3
 low - high  # difference
-```
-
-## Set comprehensions
-
-```{code-cell} ipython3
-squares = {x**2 for x in range(6)}
-squares
-```
-
-```{code-cell} ipython3
-evens = {x for x in range(10) if x % 2 == 0}
-evens
 ```
 
 ## Dictionaries
@@ -237,17 +202,4 @@ betyg['Alice']['Matte']
 ```{code-cell} ipython3
 betyg['Bob']['Engelska'] = 87
 betyg
-```
-
-## Dictionary comprehensions
-
-```{code-cell} ipython3
-squares = {x: x**2 for x in range(5)}
-squares
-```
-
-```{code-cell} ipython3
-original = {'äpple': 1, 'banan': 2, 'körsbär': 3}
-swapped = {v: k for k, v in original.items()}
-swapped
 ```

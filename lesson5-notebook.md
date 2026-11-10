@@ -89,7 +89,55 @@ people = {'Bob': 25, 'Dave': 20, 'Alice': 30}
 sorted(people.items(), key=lambda item: item[1])
 ```
 
-## The mutable default trap
+## List comprehensions
+
+```{code-cell} ipython3
+squares = [x**2 for x in range(6)]
+squares
+```
+
+```{code-cell} ipython3
+evens = [x for x in range(10) if x % 2 == 0]
+evens
+```
+
+## Generator expressions
+
+```{code-cell} ipython3
+squares = (x**2 for x in range(100_000_000))
+type(squares)
+```
+
+```{code-cell} ipython3
+next(squares), next(squares), next(squares)
+```
+
+## Set comprehensions
+
+```{code-cell} ipython3
+squares = {x**2 for x in range(6)}
+squares
+```
+
+```{code-cell} ipython3
+evens = {x for x in range(10) if x % 2 == 0}
+evens
+```
+
+## Dictionary comprehensions
+
+```{code-cell} ipython3
+squares = {x: x**2 for x in range(5)}
+squares
+```
+
+```{code-cell} ipython3
+original = {'äpple': 1, 'banan': 2, 'körsbär': 3}
+swapped = {v: k for k, v in original.items()}
+swapped
+```
+
+## Further reading: the mutable default trap
 
 ```{code-cell} ipython3
 def add_item(item, basket=[]):   # basket is evaluated once!

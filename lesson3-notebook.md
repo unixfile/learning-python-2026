@@ -74,6 +74,52 @@ s[:3], s[3:]
 s[::2], s[::-1]
 ```
 
+## for loop
+
+```{code-cell} ipython3
+fruits = ["banan", "melon", "kiwi", "citron"]
+for fruit in fruits:
+    print(fruit)
+```
+
+## range()
+
+```{code-cell} ipython3
+list(range(5))
+```
+
+```{code-cell} ipython3
+list(range(2, 8))
+```
+
+```{code-cell} ipython3
+list(range(0, 10, 2))
+```
+
+## break and continue
+
+```{code-cell} ipython3
+for n in range(1, 10):
+    if n == 5:
+        break
+    print(n, end=' ')
+```
+
+```{code-cell} ipython3
+for n in range(1, 10):
+    if n % 2 == 0:
+        continue
+    print(n, end=' ')
+```
+
+## enumerate
+
+```{code-cell} ipython3
+fruits = ["banan", "melon", "kiwi", "citron"]
+for index, fruit in enumerate(fruits):
+    print(f"{index}: {fruit}")
+```
+
 ## Copying lists
 
 ```{code-cell} ipython3
@@ -137,50 +183,4 @@ x, y
 ```{code-cell} ipython3
 single = (42,)
 type(single)
-```
-
-## for loop
-
-```{code-cell} ipython3
-fruits = ["banan", "melon", "kiwi", "citron"]
-for fruit in fruits:
-    print(fruit)
-```
-
-## range()
-
-```{code-cell} ipython3
-list(range(5))
-```
-
-```{code-cell} ipython3
-list(range(2, 8))
-```
-
-```{code-cell} ipython3
-list(range(0, 10, 2))
-```
-
-## break and continue
-
-```{code-cell} ipython3
-for n in range(1, 10):
-    if n == 5:
-        break
-    print(n, end=' ')
-```
-
-```{code-cell} ipython3
-for n in range(1, 10):
-    if n % 2 == 0:
-        continue
-    print(n, end=' ')
-```
-
-## enumerate
-
-```{code-cell} ipython3
-fruits = ["banan", "melon", "kiwi", "citron"]
-for index, fruit in enumerate(fruits):
-    print(f"{index}: {fruit}")
 ```

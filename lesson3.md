@@ -1,3 +1,4 @@
+
 # Lesson 3
 
 ## Material
@@ -8,12 +9,12 @@ https://github.com/unixfile/learning-python-2026
 
 - Lists: creation, indexing, methods
 - Slicing
+- for loops and enumerate
+- break and continue
 - Copying lists
 - Multidimensional lists
 - Mutability vs. immutability
 - Tuples
-- for loops and enumerate
-- break and continue
 
 # 1 Creating a list
 
@@ -89,74 +90,7 @@ In : s[::-1]
 Out: [5, 4, 3, 2, 1, 0]
 ```
 
-# 7 Copying lists
-
-```
-In : a = [1, 2, 3]
-In : b = a
-In : b.append(4)
-In : a
-Out: [1, 2, 3, 4]
-
-In : c = a.copy()
-In : c.append(5)
-In : a
-Out: [1, 2, 3, 4]
-```
-
-- Assignment copies the reference, not the list
-
-# 8 Multidimensional lists
-
-```
-In : matrix = [[1, 2, 3],
-   :            [4, 5, 6],
-   :            [7, 8, 9]]
-In : matrix[1][2]
-Out: 6
-```
-
-# 9 Mutability
-
-```python
-# Lists are mutable
-numbers = [1, 2, 3]
-numbers[0] = 99  # ok
-
-# Strings are immutable
-s = "hello"
-s[0] = "H"  # TypeError
-```
-
-# 10 Tuples
-
-```
-In : t = (1, 2, 3)
-In : type(t)
-Out: tuple
-
-In : t[0]
-Out: 1
-
-In : t[0] = 99  # TypeError: object does not support item assignment
-```
-
-# 11 Tuples, continued...
-
-```
-In : point = (10, 20)
-In : x, y = point
-In : x
-Out: 10
-
-In : single = (42,)
-In : type(single)
-Out: tuple
-```
-
-- Use tuples for fixed data, lists for dynamic data
-
-# 12 for loop
+# 7 for loop
 
 ```python
 fruits = ["banan", "melon", "kiwi", "citron"]
@@ -168,7 +102,7 @@ for fruit in fruits:
 - Think of `for` as "for each"
 - Works on any iterable: lists, strings, files, …
 
-# 13 range()
+# 8 range()
 
 ```
 In : list(range(5))
@@ -181,7 +115,7 @@ In : list(range(0, 10, 2))
 Out: [0, 2, 4, 6, 8]
 ```
 
-# 14 break and continue
+# 9 break and continue
 
 ```python
 # break exits the loop early
@@ -199,7 +133,7 @@ for n in range(1, 10):
 # Output: 1 3 5 7 9
 ```
 
-# 15 enumerate
+# 10 enumerate
 
 ```python
 fruits = ["banan", "melon", "kiwi", "citron"]
@@ -213,3 +147,70 @@ for index, fruit in enumerate(fruits):
 # 2: kiwi
 # 3: citron
 ```
+
+# 11 Copying lists
+
+```
+In : a = [1, 2, 3]
+In : b = a
+In : b.append(4)
+In : a
+Out: [1, 2, 3, 4]
+
+In : c = a.copy()
+In : c.append(5)
+In : a
+Out: [1, 2, 3, 4]
+```
+
+- Assignment copies the reference, not the list
+
+# 12 Multidimensional lists
+
+```
+In : matrix = [[1, 2, 3],
+   :            [4, 5, 6],
+   :            [7, 8, 9]]
+In : matrix[1][2]
+Out: 6
+```
+
+# 13 Mutability
+
+```python
+# Lists are mutable
+numbers = [1, 2, 3]
+numbers[0] = 99  # ok
+
+# Strings are immutable
+s = "hello"
+s[0] = "H"  # TypeError
+```
+
+# 14 Tuples
+
+```
+In : t = (1, 2, 3)
+In : type(t)
+Out: tuple
+
+In : t[0]
+Out: 1
+
+In : t[0] = 99  # TypeError: object does not support item assignment
+```
+
+# 15 Tuples, continued...
+
+```
+In : point = (10, 20)
+In : x, y = point
+In : x
+Out: 10
+
+In : single = (42,)
+In : type(single)
+Out: tuple
+```
+
+- Use tuples for fixed data, lists for dynamic data

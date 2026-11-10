@@ -1,3 +1,4 @@
+
 # Lesson 5
 
 ## Material
@@ -11,6 +12,7 @@ https://github.com/unixfile/learning-python-2026
 - Scope: where Python looks for a name
 - `*args` and `**kwargs`
 - Lambda expressions
+- Comprehensions and generator expressions
 - Pythonic style
 
 # 1 Defining functions
@@ -131,7 +133,69 @@ sorted(people.items(), key=lambda item: item[1])
 - A lambda is a small, anonymous, one-expression function
 - Handy as a throw-away `key=` argument to `sorted`, `max`, etc.
 
-# 7 Pythonic style
+# 7 List comprehensions
+
+```
+In : squares = [x**2 for x in range(6)]
+In : squares
+Out: [0, 1, 4, 9, 16, 25]
+
+In : evens = [x for x in range(10) if x % 2 == 0]
+In : evens
+Out: [0, 2, 4, 6, 8]
+```
+
+- Concise syntax for building lists from iterables
+
+# 8 Generator expressions
+
+```
+In : squares = (x**2 for x in range(100_000_000))
+In : type(squares)
+Out: generator
+```
+
+- `()` instead of `[]` — values produced on demand
+- Takes almost no memory
+- Can only be iterated once
+
+```
+In : next(squares)
+Out: 0
+In : next(squares)
+Out: 1
+```
+
+# 9 Set comprehensions
+
+```
+In : squares = {x**2 for x in range(6)}
+In : squares
+Out: {0, 1, 4, 9, 16, 25}
+
+In : evens = {x for x in range(10) if x % 2 == 0}
+In : evens
+Out: {0, 2, 4, 6, 8}
+```
+
+- Same syntax as list comprehensions but with `{}`
+
+# 10 Dictionary comprehensions
+
+```
+In : squares = {x: x**2 for x in range(5)}
+In : squares
+Out: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+```
+
+```
+In : original = {'äpple': 1, 'banan': 2, 'körsbär': 3}
+In : swapped = {v: k for k, v in original.items()}
+In : swapped
+Out: {1: 'äpple', 2: 'banan', 3: 'körsbär'}
+```
+
+# 11 Pythonic style
 
 ```python
 # Preferred                   # Avoid
