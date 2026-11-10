@@ -11,6 +11,7 @@ https://github.com/unixfile/learning-python-2026
 - Scope: where Python looks for a name
 - `*args` and `**kwargs`
 - Lambda expressions
+- Pythonic style
 
 # 1 Defining functions
 
@@ -129,6 +130,19 @@ sorted(people.items(), key=lambda item: item[1])
 
 - A lambda is a small, anonymous, one-expression function
 - Handy as a throw-away `key=` argument to `sorted`, `max`, etc.
+
+# 7 Pythonic style
+
+```python
+# Preferred                   # Avoid
+if value is None: ...          # if value == None: ...
+if value is not None: ...      # if value != None: ...
+if my_list: ...                # if len(my_list) > 0: ...
+if not my_list: ...            # if len(my_list) == 0: ...
+if condition: ...              # if condition == True: ...
+```
+
+- A linter like `ruff` can flag these automatically
 
 # Further reading: the mutable default trap
 

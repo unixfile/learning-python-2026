@@ -48,6 +48,21 @@ a, b = 5, 10
 a, b
 ```
 
+## Object inspection
+
+```{code-cell} ipython3
+x = "hello"
+type(x)
+```
+
+```{code-cell} ipython3
+dir(x)
+```
+
+```{code-cell} ipython3
+help(str.split)
+```
+
 ## Strings
 
 ```{code-cell} ipython3
@@ -97,19 +112,4 @@ f"The sum of {a} and {b} is {a + b}."
 ```{code-cell} ipython3
 pi = 3.14159
 f"Pi is {pi:.2f}."
-```
-
-## Object inspection
-
-```{code-cell} ipython3
-x = "hello"
-type(x)
-```
-
-```{code-cell} ipython3
-dir(x)
-```
-
-```{code-cell} ipython3
-help(str.split)
 ```

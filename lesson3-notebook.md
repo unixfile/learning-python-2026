@@ -184,12 +184,3 @@ fruits = ["banan", "melon", "kiwi", "citron"]
 for index, fruit in enumerate(fruits):
     print(f"{index}: {fruit}")
 ```
-
-## while loop
-
-```{code-cell} ipython3
-i = 5
-while i > 0:
-    print(i, end=' ')
-    i -= 1
-```

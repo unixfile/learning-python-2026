@@ -91,14 +91,14 @@ m = re.search(rgx, text)
 m.group(0), m.group(1), m.group(2), m.group(3)
 ```
 
-## Named groups
+## Further reading: named groups
 
 ```{code-cell} ipython3
 m = re.search(r'(?P<year>\d{4})-(?P<month>\d{2})', "Date: 2024-06-13")
 m.group('year'), m.group('month')
 ```
 
-## Flags and escaping
+## Further reading: flags and escaping
 
 ```{code-cell} ipython3
 text = "April is the\ncruellest month"

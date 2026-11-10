@@ -14,7 +14,6 @@ https://github.com/unixfile/learning-python-2026
 - Tuples
 - for loops and enumerate
 - break and continue
-- while loops
 
 # 1 Creating a list
 
@@ -214,29 +213,3 @@ for index, fruit in enumerate(fruits):
 # 2: kiwi
 # 3: citron
 ```
-
-# 16 while loop
-
-```python
-i = 5
-while i > 0:
-    print(i, end=' ')
-    i -= 1
-# Output: 5 4 3 2 1
-```
-
-- Loop runs as long as the condition is `True`
-- Forgetting to update `i` creates an infinite loop
-
-# 17 while True
-
-```python
-while True:
-    user_input = input("Enter 'exit' to stop: ")
-    if user_input == 'exit':
-        break
-    print(f"You entered: {user_input}")
-```
-
-- `break` is the only way out of a `while True:` loop
-- Useful for menus and simple REPLs

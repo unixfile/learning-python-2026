@@ -7,10 +7,12 @@ https://github.com/unixfile/learning-python-2026
 ## Today
 
 - Numbers and arithmetic
-- Booleans and truthiness
+- Booleans and comparison operators
+- Truthiness
 - Code blocks and indentation
 - if/elif/else
-- Comparison and logical operators
+- Logical operators
+- while loops
 
 # 1 Integers and floats
 
@@ -33,7 +35,7 @@ Out: (-9, int)
 
 In : quotient = 3 / 7
 In : quotient, type(quotient)
-Out: (0.4285714285714285, float)
+Out: (0.42857142857142855, float)
 ```
 
 # 3 Power and modulo
@@ -69,7 +71,20 @@ In : to_be and not_to_be
 Out: False
 ```
 
-# 6 Truthiness
+# 6 Comparison operators
+
+```python
+x, y = 5, 10
+
+x == y    # False  — equal
+x != y    # True   — not equal
+x > y     # False  — greater than
+x >= y    # False  — greater than or equal
+x < y     # True   — less than
+x <= y    # True   — less than or equal
+```
+
+# 7 Truthiness
 
 ```
 In : bool(0)
@@ -88,7 +103,7 @@ In : bool(0.0001)
 Out: True
 ```
 
-# 7 Code blocks
+# 8 Code blocks
 
 Blocks start with `:` and indent 4 spaces
 
@@ -96,15 +111,14 @@ Blocks start with `:` and indent 4 spaces
 if True:
     print("banan")
     print("melon")
-    for i in range(10):
-        print(1 << i)
-    print("kiwi")
+    if True:
+        print("kiwi")
     print("citron")
 ```
 
 - Blocks can be nested
 
-# 8 Using booleans and truthiness
+# 9 Using booleans and truthiness
 
 ```python
 if True:
@@ -118,7 +132,7 @@ if 0:
     print("Never")
 ```
 
-# 9 if statement
+# 10 if statement
 
 ```python
 password = input("Choose a password: ")
@@ -130,9 +144,10 @@ if password == "12345":
 - Condition is any boolean or truthy value
 - Block runs only when condition is `True`
 
-# 10 if/elif/else
+# 11 if/elif/else
 
 ```python
+# input() returns a str; int() converts it to an int
 temperature = int(input("Current temperature: "))
 
 if temperature > 20:
@@ -146,19 +161,6 @@ else:
 ```
 
 - Only one block runs; the rest are skipped
-
-# 11 Comparison operators
-
-```python
-x, y = 5, 10
-
-x == y    # False  — equal
-x != y    # True   — not equal
-x > y     # False  — greater than
-x >= y    # False  — greater than or equal
-x < y     # True   — less than
-x <= y    # True   — less than or equal
-```
 
 # 12 Logical operators
 
@@ -175,15 +177,28 @@ if not (x > y):
     print("x is not greater than y")
 ```
 
-# 13 Pythonic style
+# 13 while loop
 
 ```python
-# Preferred                   # Avoid
-if value is None: ...          # if value == None: ...
-if value is not None: ...      # if value != None: ...
-if my_list: ...                # if len(my_list) > 0: ...
-if not my_list: ...            # if len(my_list) == 0: ...
-if condition: ...              # if condition == True: ...
+i = 5
+while i > 0:
+    print(i, end=' ')
+    i -= 1
+# Output: 5 4 3 2 1
 ```
 
-- A linter like `ruff` can flag these automatically
+- Loop runs as long as the condition is `True`
+- Forgetting to update `i` creates an infinite loop
+
+# 14 while True
+
+```python
+while True:
+    user_input = input("Enter 'exit' to stop: ")
+    if user_input == 'exit':
+        break
+    print(f"You entered: {user_input}")
+```
+
+- `break` is the only way out of a `while True:` loop
+- Useful for menus and simple REPLs

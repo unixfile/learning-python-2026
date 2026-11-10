@@ -79,15 +79,21 @@ if 0:
     print("never printed")
 ```
 
+## Comparison operators
+
+```{code-cell} ipython3
+x, y = 5, 10
+x == y, x != y, x > y, x >= y, x < y, x <= y
+```
+
 ## Code blocks
 
 ```{code-cell} ipython3
 if True:
     print("banan")
     print("melon")
-    for i in range(4):
-        print(1 << i)
-    print("kiwi")
+    if True:
+        print("kiwi")
     print("citron")
 ```
 
@@ -113,13 +119,6 @@ else:
     print("It's normal Swedish temperature")
 ```
 
-## Comparison operators
-
-```{code-cell} ipython3
-x, y = 5, 10
-x == y, x != y, x > y, x >= y, x < y, x <= y
-```
-
 ## Logical operators
 
 ```{code-cell} ipython3
@@ -133,4 +132,13 @@ x > 20 or z < 10
 
 ```{code-cell} ipython3
 not (x > y)
+```
+
+## while loop
+
+```{code-cell} ipython3
+i = 5
+while i > 0:
+    print(i, end=' ')
+    i -= 1
 ```

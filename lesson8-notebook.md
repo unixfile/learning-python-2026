@@ -215,7 +215,7 @@ foo(), bar()         # only the names listed in __all__ arrive
 _helper()            # not exported (expected NameError)
 ```
 
-## Subpackages
+## Further reading: subpackages
 
 ```{code-cell} ipython3
 !mkdir -p mathpkg/stats
@@ -237,7 +237,7 @@ from mathpkg.stats.mean import mean
 mean([2, 4, 6])
 ```
 
-## Running modules with -m
+## Further reading: running modules with -m
 
 ```{code-cell} ipython3
 !python3 -m calendar 2026 6   # run a stdlib module as a script
